@@ -5,3 +5,6 @@ I created a simple pomodoro counter from the Advent of Javascript 2021 24 days o
 
 You can also edit the timer by clicking the gear button
 <img width="700" alt="Screen Shot 2022-12-12 at 2 15 43 PM" src="https://user-images.githubusercontent.com/87579758/207134180-5e04b331-9fac-416d-8737-58ca865f5e89.png">
+
+Time's up!
+<img width="700" alt="Screen Shot 2022-12-12 at 2 18 13 PM" src="https://user-images.githubusercontent.com/87579758/207134665-729d835e-71aa-41df-801f-d0c347ecf07f.png">
