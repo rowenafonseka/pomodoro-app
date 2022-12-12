@@ -84,7 +84,7 @@ input[type=text]:disabled {
   border-bottom: none;
 }
 
-.start {
+.start, .pause {
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -98,7 +98,7 @@ input[type=text]:disabled {
   margin-bottom: 20px;
 }
 
-.start:hover {
+.start:hover, .pause:hover {
   opacity: 1;
 }
 
@@ -111,4 +111,8 @@ input[type=text]:disabled {
 
 .settings:hover {
   opacity: 1;
+}
+
+.hidden {
+  display: none;
 }
