@@ -10,9 +10,13 @@
 const start = document.querySelector(".start");
 const pause = document.querySelector(".pause");
 const settings = document.querySelector(".settings");
-
+const ring = document.querySelector(".ring");
 const minute = document.querySelector(".minutes input");
 const second = document.querySelector(".seconds input");
+
+const audio = new Audio(
+  "https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"
+);
 
 // create a function so that when start button is clicked, timer starts counting
 
@@ -44,6 +48,7 @@ const timer = () => {
     minute.value = minutesLeft;
     second.value = secondsLeft;
 
+    // alert time's up once total seconds reaches 0
     if (currentSeconds === 0) {
       clearInterval(interval);
       alert("Time is up!");
@@ -51,12 +56,13 @@ const timer = () => {
       return;
     }
 
+    //  pause handleclick to clearInterval when pause button is clicked
     pause.addEventListener("click", () => {
-      // clearInterval stops the setInterval function from repeating
       clearInterval(interval);
       settings.removeAttribute("disabled");
       start.classList.remove("hidden");
       pause.classList.add("hidden");
+      audio.play();
     });
   }, 1000);
 };
@@ -73,8 +79,21 @@ const startTimer = () => {
   });
 };
 
+// function to edit the timer
+const editTimer = () => {
+  settings.addEventListener("click", () => {
+    minute.toggleAttribute("disabled");
+    second.toggleAttribute("disabled");
+    // parseint the values so user can add integers
+    let minutes = parseInt(minute.value);
+    let seconds = parseInt(second.value);
+  });
+};
+
+// function to enable the app
 const pomodoro = () => {
   startTimer();
+  editTimer();
 };
 
 pomodoro();
